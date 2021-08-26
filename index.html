@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+	<link rel="icon" href="fav.png">
+	<title>Persian Quotes</title>
+	<style>
+		@font-face{font-family:dana;font-style:normal;font-weight:400;src:url(dana-fanum-regular.woff2)}
+		* {
+			margin-bottom: 0;
+		}
+		body {
+			background: #000;
+			color: #fff;
+			font-family:dana;
+			direction: rtl;
+			text-align: center;
+		}
+		.quotes-icon img{
+			max-width: 200px;
+			width: 100%;
+		}
+		.quotes-body {
+			font-size: 35px;
+		}
+		.quotes-author {
+			font-size: 20px;
+		}
+		div {
+			position: absolute;
+		  	left: 50%;
+		  	top: 20%;
+		  	transform: translate(-50%, -50%);
+		  	-ms-transform: translate(-50%, -50%);
+		  	-webkit-transform: translate(-50%, -50%);
+		 	width: 300px;
+		  	height: 100px;
+		}
+	</style>
+</head>
+<body onload="main()">
+	<div>
+		<p class="quotes-icon"><img src="qoute.png" /></p>
+		<p class="quotes-body" id="qbody"></p>
+		<h1 class="quotes-author" id="qauthor"></h1>
+	</div>
+
+	<script>
+		function readTextFile(file, callback) {
+		    var rawFile = new XMLHttpRequest();
+		    rawFile.overrideMimeType("application/json");
+		    rawFile.open("GET", file, true);
+		    rawFile.onreadystatechange = function() {
+		        if (rawFile.readyState === 4 && rawFile.status == "200") {
+		            callback(rawFile.responseText);
+		        }
+		    }
+		    rawFile.send(null);
+		}
+		function randomIntFromInterval(min, max) {
+		  return Math.floor(Math.random() * (max - min + 1) + min)
+		}
+
+		function main() {
+			readTextFile("data.json", function(text){
+				data = JSON.parse(text);
+				random_number = randomIntFromInterval(0, data.length);
+				document.getElementById('qbody').innerHTML = data[0]['body'];
+				document.getElementById('qauthor').innerHTML = data[0]['author'];
+			});	
+		}
+	</script>
+</body>
+</html>
