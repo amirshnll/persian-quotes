@@ -6,7 +6,7 @@
 	<link rel="icon" href="fav.png">
 	<title>Persian Quotes</title>
 	<style>
-		@font-face{font-family:dana;font-style:normal;font-weight:400;src:url(dana-fanum-regular.woff2)}
+		@font-face{font-family:dana;font-style:normal;font-weight:400;src:url(dana-regular.woff2)}
 		* {
 			margin-bottom: 0;
 		}
@@ -16,13 +16,14 @@
 			font-family:dana;
 			direction: rtl;
 			text-align: center;
+			padding: 50px;
 		}
 		.quotes-icon img{
 			max-width: 200px;
 			width: 100%;
 		}
 		.quotes-body {
-			font-size: 35px;
+			font-size: 30px;
 		}
 		.quotes-author {
 			font-size: 20px;
@@ -34,7 +35,7 @@
 		  	transform: translate(-50%, -50%);
 		  	-ms-transform: translate(-50%, -50%);
 		  	-webkit-transform: translate(-50%, -50%);
-		 	width: 300px;
+		 	width: 90%;
 		  	height: 100px;
 		}
 	</style>
@@ -44,6 +45,7 @@
 		<p class="quotes-icon"><img src="qoute.png" /></p>
 		<p class="quotes-body" id="qbody"></p>
 		<h1 class="quotes-author" id="qauthor"></h1>
+		<p>&nbsp;</p>
 	</div>
 
 	<script>
@@ -66,8 +68,8 @@
 			readTextFile("data.json", function(text){
 				data = JSON.parse(text);
 				random_number = randomIntFromInterval(0, data.length);
-				document.getElementById('qbody').innerHTML = data[0]['body'];
-				document.getElementById('qauthor').innerHTML = data[0]['author'];
+				document.getElementById('qbody').innerHTML = data[random_number]['body'];
+				document.getElementById('qauthor').innerHTML = "// " + data[random_number]['author'];
 			});	
 		}
 	</script>
