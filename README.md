@@ -11,3 +11,6 @@
  
   
   https://github.com/nimah79/Persian-Quotes-SQL
+  
+  
+  **Dataset DOI :** 10.34740/kaggle/dsv/2533372
