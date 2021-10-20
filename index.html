@@ -7,37 +7,13 @@
 	<title>Persian Quotes</title>
 	<style>
 		@font-face{font-family:dana;font-style:normal;font-weight:400;src:url(dana-regular.woff2)}
-		* {
-			margin-bottom: 0;
-		}
-		body {
-			background: #000;
-			color: #fff;
-			font-family:dana;
-			direction: rtl;
-			text-align: center;
-			padding: 50px;
-		}
-		.quotes-icon img{
-			max-width: 200px;
-			width: 100%;
-		}
-		.quotes-body {
-			font-size: 30px;
-		}
-		.quotes-author {
-			font-size: 20px;
-		}
-		div {
-			position: absolute;
-		  	left: 50%;
-		  	top: 20%;
-		  	transform: translate(-50%, -50%);
-		  	-ms-transform: translate(-50%, -50%);
-		  	-webkit-transform: translate(-50%, -50%);
-		 	width: 90%;
-		  	height: 100px;
-		}
+		*{margin-bottom:0}
+		body{background:#000;color:#fff;font-family:dana;direction:rtl;text-align:center;padding:50px}
+		.quotes-icon img{max-width:200px;width:100%}
+		.quotes-body{font-size:30px}
+		.quotes-author{font-size:20px}
+		.copyright a{color:#fff}
+		div{position:absolute;left:50%;top:20%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);width:90%;height:100px}
 	</style>
 </head>
 <body onload="main()">
@@ -73,5 +49,6 @@
 			});	
 		}
 	</script>
+	<p class="copyright">Source : <a href="https://github.com/amirshnll/persian-quotes" title="Amir Shokri">amirshnll/persian-quotes</a></p>
 </body>
 </html>
